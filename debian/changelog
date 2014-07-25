@@ -3,6 +3,7 @@ nautilus-id3tags (0.1-4) UNRELEASED; urgency=medium
   *  Lintian cleanups
   *  Update README.md 
   *  Update control
+  *  Added Architecture = all
 
  -- Jason Pleau <jason@jpleau.ca>  Fri, 25 Jul 2014 17:05:51 -0400
 
