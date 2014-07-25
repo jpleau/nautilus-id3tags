@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 # nautilus-id3tags: Nautilus extension to allow for editing of ID3 tags for 
 # audio files.
 # Copyright (C) 2014 Jason Pleau <jason@jpleau.ca>
