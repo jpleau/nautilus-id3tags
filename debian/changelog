@@ -1,11 +1,17 @@
-nautilus-id3tags (0.1-4) UNRELEASED; urgency=medium
+nautilus-id3tags (0.2) UNRELEASED; urgency=medium
+
+  * Version bump
+
+ -- Jason Pleau <jason@jpleau.ca>  Sat, 26 Jul 2014 11:21:11 -0400
+
+nautilus-id3tags (0.1-4) unstable; urgency=medium
 
   *  Lintian cleanups
   *  Update README.md 
   *  Update control
   *  Added Architecture = all
 
- -- Jason Pleau <jason@jpleau.ca>  Fri, 25 Jul 2014 17:05:51 -0400
+ -- Jason Pleau <jason@jpleau.ca>  Sat, 26 Jul 2014 11:21:06 -0400
 
 nautilus-id3tags (0.1-1) unstable; urgency=low
 
