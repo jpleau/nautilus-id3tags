@@ -40,6 +40,8 @@ class NautilusID3Tags(GObject.GObject, Nautilus.PropertyPageProvider):
 
         filename = urllib.unquote(file.get_uri()[7:])
     
+        # For now I am using EasyID3, I will swap to ID3 eventually and won't have to 
+        # do this ugly workaround to not process non-audio files (files without id3 tags..)
         try:
             self.song_tags = EasyID3(filename)
         except:
