@@ -4,6 +4,8 @@ Plugin for nautilus written in Python: Allows to edit ID3 tags on audio files
 
 Status: "works for me"
 
+TODO: Don't use EasyID3, it misses some tags.
+
 ## Requirements
 
  * Nautilus
