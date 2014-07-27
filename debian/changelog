@@ -1,8 +1,14 @@
-nautilus-id3tags (0.2-1) UNRELEASED; urgency=medium
+nautilus-id3tags (0.3-1) UNRELEASED; urgency=medium
+
+  * Version dump
+
+ -- Jason Pleau <jason@jpleau.ca>  Sun, 27 Jul 2014 01:23:51 -0400
+
+nautilus-id3tags (0.2-1) unstable; urgency=medium
 
   * Version bump
 
- -- Jason Pleau <jason@jpleau.ca>  Sat, 26 Jul 2014 11:21:11 -0400
+ -- Jason Pleau <jason@jpleau.ca>  Sun, 27 Jul 2014 01:23:47 -0400
 
 nautilus-id3tags (0.1-4) unstable; urgency=medium
 

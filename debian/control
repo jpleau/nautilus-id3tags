@@ -11,7 +11,7 @@ Vcs-Browser: https://github.com/jpleau/nautilus-id3tags
 
 Package: nautilus-id3tags
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, nautilus, python-nautilus, python-mutagen 
+Depends: ${shlibs:Depends}, ${misc:Depends}, nautilus, python-nautilus
 Description: Edit id3 tags from nautilus
  Edit id3 tags directly from the file manager, by 
  selecting a file, going into its properties.
