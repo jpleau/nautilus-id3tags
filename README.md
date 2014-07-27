@@ -10,7 +10,7 @@ TODO: Don't use EasyID3, it misses some tags.
 
  * Nautilus
  * Nautilus-python
- * Mutagen
+ * pytaglib (python2)
  * python-gobject and python-gi 
 
 ## Installation
