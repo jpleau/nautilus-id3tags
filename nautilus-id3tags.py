@@ -82,7 +82,10 @@ class AudioFile:
             "set_method": set_method,
         })
 
-        set_method(self.opened_file.tags[tag_name.upper()][0].decode())
+        set_method(get_tag_value(tag_name))
+
+    def get_tag_value(self, tag_name):
+        return self.opened_file.tags[tag_name.upper()][0].decode()
        
 class NautilusID3Tags(GObject.GObject, Nautilus.PropertyPageProvider):
 
@@ -186,12 +189,53 @@ class NautilusID3Tags(GObject.GObject, Nautilus.PropertyPageProvider):
     def load_data(self):
         self.length_value.set_text(convert_s_to_human(self.audio_file.opened_file.length))
         self.audio_file.add_tag("title", self.title_entry.get_text, self.title_entry.set_text)
-        self.audio_file.add_tag("title", self.title_entry.get_text, self.title_entry.set_text)
         self.audio_file.add_tag("artist", self.artist_entry.get_text, self.artist_entry.set_text)
         self.audio_file.add_tag("album", self.album_entry.get_text, self.album_entry.set_text)
         self.audio_file.add_tag("genre", self.genre_combo.get_active_text, self.genre_combo.set_active_id)
         self.audio_file.add_tag("date", self.date_entry.get_text, self.date_entry.set_text)
 
+
+
+class ColumnExtension(GObject.GObject, Nautilus.ColumnProvider, Nautilus.InfoProvider):
+    def __init__(self):
+        pass
+    
+    def get_columns(self):
+        song_column = Nautilus.Column(name="NautilusPython::song_title", attribute="song_title", label="Track Title")
+        album_column = Nautilus.Column(name="NautilusPython::song_album", attribute="song_album", label="Album")
+        artist_column = Nautilus.Column(name="NautilusPython::artist_album", attribute="song_artist", label="Artist")
+        date_column = Nautilus.Column(name="NautilusPython::song_date", attribute="song_date", label="Date")
+        genre_column = Nautilus.Column(name="NautilusPython::song_genre", attribute="song_genre", label="Genre")
+        length_column = Nautilus.Column(name="NautilusPython::song_length", attribute="song_length", label="Length")
+
+        return [song_column, album_column, artist_column, date_column, genre_column, length_column]
+
+
+    def update_file_info(self, file):
+        if file.get_uri_scheme() != 'file':
+            return
+
+        filename = urllib.unquote(file.get_uri()[7:])
+    
+        title = album = artist = date = genre = length = ""
+
+        try:
+            self.audio_file = AudioFile(filename)
+            title = self.audio_file.get_tag_value("title").replace("unknown", "")
+            album = self.audio_file.get_tag_value("album").replace("unknown", "")
+            artist = self.audio_file.get_tag_value("artist").replace("unknown", "")
+            date = self.audio_file.get_tag_value("date").replace("unknown", "")
+            genre = self.audio_file.get_tag_value("genre").replace("unknown", "")
+            length = convert_s_to_human(self.audio_file.opened_file.length).replace("unknown", "")
+        except:
+            pass
+
+        file.add_string_attribute('song_title', title)
+        file.add_string_attribute('song_album', album)
+        file.add_string_attribute('song_artist', artist)
+        file.add_string_attribute('song_date', date)
+        file.add_string_attribute('song_genre', genre)
+        file.add_string_attribute('song_length', length)
 
 
 def convert_s_to_human(seconds):
