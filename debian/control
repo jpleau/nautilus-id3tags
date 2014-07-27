@@ -1,0 +1,17 @@
+Source: nautilus-id3tags
+Section: gnome
+Priority: optional
+Maintainer: Jason Pleau <jason@jpleau.ca>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+Homepage: https://github.com/jpleau/nautilus-id3tags
+X-Python-Version: >= 2.6
+Vcs-Git: https://github.com/jpleau/nautilus-id3tags
+Vcs-Browser: https://github.com/jpleau/nautilus-id3tags
+
+Package: nautilus-id3tags
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, nautilus, python-nautilus
+Description: Edit id3 tags from nautilus
+ Edit id3 tags directly from the file manager, by 
+ selecting a file, going into its properties.
