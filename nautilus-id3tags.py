@@ -63,6 +63,8 @@ class NautilusID3Tags(GObject.GObject, Nautilus.PropertyPageProvider):
         except:
             return
         
+        self.tags = []
+
         self.box = Gtk.Box()
         self.box.set_border_width(12)
 
