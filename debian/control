@@ -13,7 +13,7 @@ Depends: ${shlibs:Depends},
  ${misc:Depends},
  nautilus, 
  python-nautilus,
- python-pytaglib
+ python-taglib
 Description: Edit id3 tags from nautilus
  Edit id3 tags directly from the file manager, by 
  selecting a file, going into its properties.

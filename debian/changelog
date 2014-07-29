@@ -1,3 +1,9 @@
+nautilus-id3tags (0.6-2) UNRELEASED; urgency=medium
+
+  * Use python-taglib instead of python-pytaglib
+
+ -- Jason Pleau <jason@jpleau.ca>  Tue, 29 Jul 2014 13:24:05 -0400
+
 nautilus-id3tags (0.6-1) unstable; urgency=medium
 
   * Version bump
