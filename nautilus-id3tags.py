@@ -82,7 +82,7 @@ class AudioFile:
             "set_method": set_method,
         })
 
-        set_method(get_tag_value(tag_name))
+        set_method(self.get_tag_value(tag_name))
 
     def get_tag_value(self, tag_name):
         return self.opened_file.tags[tag_name.upper()][0].decode()
