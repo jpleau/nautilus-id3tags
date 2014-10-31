@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# coding=utf-8
 
 # nautilus-id3tags: Nautilus extension to allow for editing of ID3 tags for 
 # audio files.
@@ -70,7 +71,7 @@ class AudioFile:
             value = tag["get_method"]()
             if value == None:
                 value = ""
-            self.opened_file.tags[tag["tag_name"]] = [value.encode()]
+            self.opened_file.tags[tag["tag_name"]] = [value.decode('utf-8')]
 
         self.opened_file.save()
 
@@ -85,7 +86,9 @@ class AudioFile:
         set_method(self.get_tag_value(tag_name))
 
     def get_tag_value(self, tag_name):
-        return self.opened_file.tags[tag_name.upper()][0].decode()
+        if tag_name.upper() in self.opened_file.tags:
+            return self.opened_file.tags[tag_name.upper()][0]
+        return ""
        
 class NautilusID3Tags(GObject.GObject, Nautilus.PropertyPageProvider):
 
@@ -102,7 +105,7 @@ class NautilusID3Tags(GObject.GObject, Nautilus.PropertyPageProvider):
 
         filename = urllib.unquote(file.get_uri()[7:])
     
-        # TODO: manage exceptions in a non-retarded way like this :)
+        # TODO: manage exceptions in a non-idiotic way like this :)
 
         try:
             self.audio_file = AudioFile(filename)
