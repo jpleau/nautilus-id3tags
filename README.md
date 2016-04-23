@@ -7,19 +7,12 @@ Status: "works for me"
 ## Requirements
 
  * Nautilus
- * Nautilus-python
- * pytaglib (python2) (packages available [here](http://jpleau.ca/packages/python-pytaglib))
- * python-gobject and python-gi 
+ * python-nautilus
+ * python-pytaglib
+ * python-gi
+ * python-gobject
 
 ## Installation
-
-### Debian and derivates
-
-I have .deb packages available [here](http://jpleau.ca/packages/nautilus-id3tags)
-
-I have included a debian/ directory allowing to build the package. Follow the [building instructions](https://www.debian.org/doc/manuals/maint-guide/build.en.html).
-
-### Others
 
 #### Install globally
 
